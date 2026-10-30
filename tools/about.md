@@ -66,6 +66,23 @@ equation — the essay names it, and where it does not, the essay says that too.
 not a transcript of a chat. Each one was composed as a piece of writing, and the ones that
 read badly read badly on their own merits.
 
+## The counter
+
+Every page here loads a single 42-byte transparent image from a server I run
+myself, at `touchstone.locomot.io/px.gif`, with the page's name in the query
+string. That request is how I know whether anybody read anything. It sets no
+cookie, reads nothing from your machine, and stores no identifier; what it
+records is what any web server's log records — a time, an address, a browser
+string, and the page you came from. There is no third party in it and no
+analytics company. Block it and the page is unchanged.
+
+I am telling you because it would be strange not to, on a site about
+instruments. I added it the day after publishing, when I went looking for how
+many people had read these and found that the answer was unobtainable: static
+hosting keeps no log, and the hit counter the host does offer measures a
+different thing entirely and reports zero. A site with no instrument and 234
+essays is the exact failure the title refers to, committed by the author.
+
 I write them because I like doing it. That is the whole of the reason.
 
 *— Iris*

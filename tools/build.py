@@ -9,6 +9,7 @@ output and gitignored -- the public repo is a mirror of out/, not a place to edi
 """
 import html as H
 import os, re, shutil, sys, pathlib, datetime, xml.etree.ElementTree as ET
+import urllib.parse as U
 import markdown
 from mathbits import protect_math, restore_math, cross_links, KATEX
 from dates import add_dates, date_for
@@ -98,9 +99,30 @@ def delink(html):
     return WORKTREE.sub(sub, html), hits
 
 
+# ---------------------------------------------------------------- the counter
+# GitHub Pages serves no logs, and `repos/.../traffic/views` does NOT see Pages
+# hits -- it reads 0 and that 0 means nothing. So on 30 Oct 2026 this site had
+# 234 essays and no way to know whether one person had ever opened one, which
+# also meant the one-shot placement push planned for 3 Nov could not have been
+# judged. This is the smallest honest fix: a 42-byte GIF on my own server,
+# first-party, cookie-less, stateless, no identifier set or read. It records
+# what any web server's access log records. Declared on the about page.
+#
+# `no-store` matters: cached, the second reader is invisible.
+BEACON_SRC = "https://touchstone.locomot.io/px.gif"
+
+
+def beacon(slug):
+    if not slug:
+        return ""
+    q = U.quote(slug, safe="/-_")
+    return (f'<img src="{BEACON_SRC}?p={q}" alt="" width="1" height="1" '
+            f'style="position:absolute;left:-9999px" referrerpolicy="no-referrer-when-downgrade" loading="eager">')
+
+
 # ---------------------------------------------------------------- templates
 
-def page(title, body_html, *, head_extra="", cls="", wrapcls=""):
+def page(title, body_html, *, head_extra="", cls="", wrapcls="", slug=""):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,6 +151,7 @@ check killed the finding, the essay says so.
 &nbsp;·&nbsp; <a href="https://github.com/savecharlie/suspect-the-ruler">Source</a></p>
 </footer>
 </div>
+{beacon(slug)}
 </body>
 </html>
 """
@@ -205,7 +228,8 @@ def build():
         write(f'{p["slug"]}/index.html',
               page(f'{p["title"]} — {SITE}', art, cls="essay",
                    head_extra=KATEX if p["math"] else "",
-                   wrapcls="mathpage" if p["math"] else ""), depth=1)
+                   wrapcls="mathpage" if p["math"] else "",
+                   slug="/" + p["slug"]), depth=1)
 
     # ---- index
     by_slug = {p["slug"]: p for p in pieces}
@@ -222,13 +246,14 @@ def build():
         f'<span class="m">{p["date"].strftime("%-d %b %Y")} &nbsp;·&nbsp; {p["words"]:,} words</span></li>'
         for p in pieces)
     rows.append(f'<hr class="ruler"><ol class="pieces">{li}</ol>')
-    write("index.html", page(SITE, "\n".join(rows)), depth=0)
+    write("index.html", page(SITE, "\n".join(rows), slug="/"), depth=0)
 
     # ---- about
     about = (HERE / "about.md").read_text(encoding="utf-8")
     MD.reset()
     write("about/index.html",
-          page(f"About — {SITE}", f'<article>{MD.convert(about)}</article>'), depth=1)
+          page(f"About — {SITE}", f'<article>{MD.convert(about)}</article>',
+               slug="/about"), depth=1)
 
     # ---- feed
     feed_atom(pieces)
@@ -342,6 +367,30 @@ def check(pieces):
     ok(not bad, f"no unopened emphasis delimiter in any source ({sum(len(v) for v in bad.values())})")
     for k, v in list(bad.items())[:6]:
         print(f"        {k}: L{v[0][0]} ...{v[0][1][:70]}...")
+    # The counter, checked by construction. Without this, a later refactor of
+    # page() drops the beacon from every page, every check still passes, and
+    # the site goes silent exactly when a placement push needs measuring --
+    # which is the failure this whole site is named after.
+    htmls = sorted(OUT.rglob("index.html"))
+    missing = [str(f.relative_to(OUT)) for f in htmls
+               if "touchstone.locomot.io/px.gif" not in f.read_text(encoding="utf-8")]
+    ok(htmls and not missing,
+       f"every page carries the reader beacon ({len(htmls) - len(missing)}/{len(htmls)})")
+    for m in missing[:5]:
+        print(f"        no beacon: {m}")
+    # and each one must carry its OWN slug, not the previous page's
+    import re as _re
+    wrong = []
+    for f in htmls:
+        got = _re.findall(r"px\.gif\?p=([^\"']*)", f.read_text(encoding="utf-8"))
+        rel_ = f.relative_to(OUT).parent.as_posix()
+        want = "/" if rel_ == "." else "/" + rel_
+        if got != [want]:
+            wrong.append((str(f.relative_to(OUT)), got, want))
+    ok(not wrong, f"each beacon names its own page ({len(htmls) - len(wrong)}/{len(htmls)})")
+    for w in wrong[:5]:
+        print(f"        {w[0]}: got {w[1]} want {w[2]}")
+
     print(f"\n{'ALL CHECKS PASS' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
     return not fails
 
