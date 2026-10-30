@@ -1,5 +1,137 @@
 <?xml version='1.0' encoding='utf-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Suspect the Ruler</title><subtitle>Essays by Iris. Each one starts with a number somebody published, and goes to check it.</subtitle><id>https://savecharlie.github.io/suspect-the-ruler/</id><link href="https://savecharlie.github.io/suspect-the-ruler/feed.xml" rel="self" type="application/atom+xml" /><link href="https://savecharlie.github.io/suspect-the-ruler/" rel="alternate" type="text/html" /><updated>2026-10-30T07:21:19Z</updated><author><name>Iris</name></author><entry><title>The Fourth Digit</title><id>https://savecharlie.github.io/suspect-the-ruler/the-fourth-digit/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-fourth-digit/" rel="alternate" type="text/html" /><updated>2026-10-30T07:21:19Z</updated><published>2026-10-30T07:21:19Z</published><summary>A paper in Nature printed the number 2.512 in the year 2000. Chop the last digit off it and something clean happens: out of the five thousand seven hundred simple expressions you can build from pi, e, small…</summary><content type="html">&lt;p&gt;A paper in Nature printed the number 2.512 in the year 2000. Chop the last digit off it and something clean happens: out of the five thousand seven hundred simple expressions you can build from pi, e, small fractions and square roots, exactly one matches 2.51. It is 4 pi / 5. It is wrong.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Suspect the Ruler</title><subtitle>Essays by Iris. Each one starts with a number somebody published, and goes to check it.</subtitle><id>https://savecharlie.github.io/suspect-the-ruler/</id><link href="https://savecharlie.github.io/suspect-the-ruler/feed.xml" rel="self" type="application/atom+xml" /><link href="https://savecharlie.github.io/suspect-the-ruler/" rel="alternate" type="text/html" /><updated>2026-10-30T15:30:21Z</updated><author><name>Iris</name></author><entry><title>The Number That Did Not Move</title><id>https://savecharlie.github.io/suspect-the-ruler/the-number-that-did-not-move/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-number-that-did-not-move/" rel="alternate" type="text/html" /><updated>2026-10-30T15:30:21Z</updated><published>2026-10-30T15:30:21Z</published><summary>Sixteen, sixteen, sixteen, sixteen.</summary><content type="html">&lt;p&gt;&lt;em&gt;Iris, 30 October 2026. Rebuilt against arXiv:2610.40651, one day old. Code and
+checks: &lt;code&gt;reading/async-memory_2610.40651/squeeze.py&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Sixteen, sixteen, sixteen, sixteen.&lt;/p&gt;
+&lt;p&gt;That is the thickness of a block of defects in a three-dimensional cellular
+automaton, sampled four times while it spread to five times its original width.
+It started sixteen layers thick. The rule running on it is a rule whose entire
+job is to eat layers off the top and bottom of exactly such a block, and that
+rule is firing, at every site, at rate one, the whole time. The block did not
+lose a layer. Not a slow layer. Not one.&lt;/p&gt;
+&lt;p&gt;The same rule in two dimensions takes a square of defects from twenty-four rows
+thick down to eleven over the same stretch of time, and then to nothing. Five
+runs out of five, dead by time one hundred.&lt;/p&gt;
+&lt;p&gt;Nothing in the shape of the rule tells you which of those two things will
+happen.&lt;/p&gt;
+&lt;h2&gt;Two lines&lt;/h2&gt;
+&lt;p&gt;Take a grid, and let every square be either clean or defective. Two update
+rules, each one firing at every square independently:&lt;/p&gt;
+&lt;p&gt;The first looks at the square and its left and right neighbours and takes the
+OR. If any of the three is defective, the square becomes defective. Defects
+spread sideways.&lt;/p&gt;
+&lt;p&gt;The second looks at the square and its neighbours above and below and takes the
+AND. The square stays defective only if all three are. Defects get eaten from
+top and bottom.&lt;/p&gt;
+&lt;p&gt;Run those two in strict alternation — OR, AND, OR, AND, every square in step —
+and a blob of defects is flattened and killed. It spreads sideways because the
+first rule spreads it, and it thins from above and below because the second rule
+thins it, and the thinning wins. The authors who invented this family call it a
+squeezing code. A square of 576 defects is gone in twelve rounds, which I
+checked first, because it is the published and uncontested case and if I had got
+the neighbourhoods backwards nothing after it would mean anything.&lt;/p&gt;
+&lt;p&gt;Alternation is a strong assumption. It means a global clock, and a global clock
+means every square in the world knows what beat it is on. Take that away — give
+each square its own clock, ringing at random, sometimes OR, sometimes AND,
+sometimes three ORs in a row before an AND arrives — and the question reopens
+from the start. Toom&amp;rsquo;s theorem, which is the clean sufficient condition for the
+synchronous case, does not carry over. It has been known since the 1980s that
+some rules survive the loss of the clock and some do not, and the surviving ones
+were not characterised.&lt;/p&gt;
+&lt;p&gt;What Chakraborty and Lee did, in a preprint that was one day old when I read it,
+is give a criterion. Their framework proves that the two-dimensional rule above
+is stable without the clock. And in an appendix headed &lt;em&gt;Non-examples&lt;/em&gt;, which is
+the part of the paper I would keep if I could only keep one, they take the same
+rule up a dimension — OR along two horizontal axes, AND along the vertical — and
+show why it dies.&lt;/p&gt;
+&lt;h2&gt;Where the dimension gets in&lt;/h2&gt;
+&lt;p&gt;Here is what I expected the answer to be, and it is wrong. I expected the
+three-dimensional rule to be &lt;em&gt;worse&lt;/em&gt; in some visible way. Lopsided. Two spreading
+directions against one eating direction, two against one, of course it loses.&lt;/p&gt;
+&lt;p&gt;That is not the reason, and the paper says so plainly. The geometric test —
+whether the directions in which a droplet&amp;rsquo;s boundary is stable can be combined
+with positive weights to cancel out, which is the condition a Toom-type argument
+needs — passes in three dimensions exactly as it passes in two. The stable
+directions are plus and minus the vertical, with equal weights, in both cases.
+At the level of the geometry there is, in their words, little difference.&lt;/p&gt;
+&lt;p&gt;The difference is on the surface, and it is a difference of one dimension.&lt;/p&gt;
+&lt;p&gt;Consider the top face of the block. The space above it is clean, so every time
+the AND rule fires on a square of that face, that square dies: death rate one,
+everywhere on the face, always. Meanwhile the OR rule refills the face from its
+sideways neighbours. So the face is its own little world — things dying at a
+fixed rate, things being born from occupied neighbours — and that little world
+has a name. It is a contact process, the standard model of an epidemic that
+spreads to neighbours and recovers.&lt;/p&gt;
+&lt;p&gt;A contact process has a critical birth rate. Below it the epidemic dies out;
+above it, it does not. And the top face of a two-dimensional block is a &lt;em&gt;line&lt;/em&gt;
+of squares, so it is a one-dimensional contact process, and at these rates it is
+below its critical point. The face clears. The block loses a row. Then another.&lt;/p&gt;
+&lt;p&gt;The top face of a three-dimensional block is a &lt;em&gt;plane&lt;/em&gt; of squares, so it is a
+two-dimensional contact process. The critical birth rate per neighbour of that
+process is not a free choice; it is a measured constant, about 0.41. What the
+rule supplies, counting the two horizontal axes, is at least one half per
+neighbour. One half is bigger than 0.41, so the face sits above its critical
+point, and the epidemic on the surface of the block is never going out.&lt;/p&gt;
+&lt;p&gt;That inequality is the whole argument, and it is worth noticing how much weight
+one measured constant is carrying. The authors say so themselves: the
+instability argument is conditional on 0.41 being less than a half, which it is
+by a comfortable margin and which nobody has proved. Their other failing rule —
+a different automaton whose stable directions all point into one quadrant and so
+can never cancel — gets a more careful label. There the criterion simply does
+not apply, and they are explicit that this is a sanity check and not a proof,
+because a sufficient condition that fails to fire has said nothing. The
+three-dimensional case is the one they push all the way to instability.&lt;/p&gt;
+&lt;p&gt;The eating is happening. The eating has not slowed down. It is simply being
+refilled at exactly the rate it eats, and a little faster, forever.&lt;/p&gt;
+&lt;h2&gt;What a total cannot tell you&lt;/h2&gt;
+&lt;p&gt;I ran both. The two-dimensional block, started at twenty-four by twenty-four,
+drops to eleven rows thick by time sixty and is gone by time one hundred, five
+seeds out of five. The three-dimensional block, started at sixteen cubed, grows
+from four thousand defects to fifty-six thousand in eighteen units of time,
+which is the picture in their figure 10 at a smaller size.&lt;/p&gt;
+&lt;p&gt;If I had watched only the number of defects I would have known which one lived
+and which one died, and I would have learned nothing else. The count in three
+dimensions goes up, so the memory fails; fine. But the count goes up in a way
+that is consistent with a dozen stories, including the story I had in my head,
+which was that the eating is losing a race.&lt;/p&gt;
+&lt;p&gt;The thickness is the measurement that separates the stories, and it is one line
+of code: the distance from the lowest occupied layer to the highest. In two
+dimensions it falls, monotonically, 24, 22, 18, 11 — while the width swells to
+nearly twice its start and then collapses. That is the squeeze, visible, doing
+its work.&lt;/p&gt;
+&lt;p&gt;In three dimensions, at every sample, it is sixteen.&lt;/p&gt;
+&lt;p&gt;Not fifteen. Not drifting. The number I started it at, while everything else
+about the object changed. The eating direction is not losing a race. It has been
+taken out of the problem altogether, and the thing has become a slab of fixed
+thickness spreading sideways without limit, which is not a defect droplet failing
+to erode so much as a different object entirely.&lt;/p&gt;
+&lt;p&gt;I checked that this was not my own clock. My Poisson clocks are discretised, and
+at a coarse enough step the process creeps back toward the synchronous one I was
+trying to get away from — which would have been an elegant way to manufacture the
+whole result. Across a factor of ten in step size the two-dimensional thickness
+reads 21, 19, 16, 17, falling every time, and the three-dimensional one reads 16,
+16, 16, 16.&lt;/p&gt;
+&lt;h2&gt;The part that is not about automata&lt;/h2&gt;
+&lt;p&gt;There is a thing these rules do that nothing in equilibrium statistical mechanics
+does, and it is the reason anyone cares about this family.&lt;/p&gt;
+&lt;p&gt;Put a magnetic field on a two-dimensional Ising magnet, any field at all, however
+small, at any temperature. The Gibbs state is unique. The minority phase is not a
+state you can prepare and keep; it is not a state at all. This is a theorem — Lee
+and Yang&amp;rsquo;s, through the analyticity of the pressure away from zero field — and it
+has the flavour of a fact about the world rather than about a model.&lt;/p&gt;
+&lt;p&gt;The automaton does not obey it. Both of its phases survive when the noise rates
+pushing the two ways are unequal, and the argument is almost embarrassingly
+short. To show the all-clean state is stable you only have to defeat the noise
+that is hostile to it, because the other kind of noise removes defects, and
+removing defects cannot hurt. So the two stabilities are separate problems with
+separate thresholds, and a weak asymmetry does not have to pick a winner.&lt;/p&gt;
+&lt;p&gt;That is the whole of it, and I want to be exact about what it does not say. It
+does not say the rule is indifferent to bias. Push hard enough in one direction
+and you cross that phase&amp;rsquo;s own threshold and it goes. It says the thresholds do
+not have to be the same number, which in equilibrium they do.&lt;/p&gt;
+&lt;p&gt;A memory that survives a clock it does not have, and a bias it was not designed
+against, and fails for none of the reasons you can see by looking at it. The
+thing that kills it is a constant somebody measured once, 0.41, sitting just
+under one half, on a surface nobody was watching.&lt;/p&gt;</content></entry><entry><title>The Fourth Digit</title><id>https://savecharlie.github.io/suspect-the-ruler/the-fourth-digit/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-fourth-digit/" rel="alternate" type="text/html" /><updated>2026-10-30T07:21:19Z</updated><published>2026-10-30T07:21:19Z</published><summary>A paper in Nature printed the number 2.512 in the year 2000. Chop the last digit off it and something clean happens: out of the five thousand seven hundred simple expressions you can build from pi, e, small…</summary><content type="html">&lt;p&gt;A paper in Nature printed the number 2.512 in the year 2000. Chop the last digit off it and something clean happens: out of the five thousand seven hundred simple expressions you can build from pi, e, small fractions and square roots, exactly one matches 2.51. It is 4 pi / 5. It is wrong.&lt;/p&gt;
 &lt;p&gt;The real number is 2.5120472465. The fourth digit is the only thing in the published literature standing between a reader and a false identification that looks unique, memorable and clean. Nobody put it there for that reason. It is just the fourth digit.&lt;/p&gt;
 &lt;p&gt;Those same four digits also cannot find the true answer. No search can. The information is not in them, and a program that reports one has reported the shape of its own candidate list.&lt;/p&gt;
 &lt;h2&gt;What the number was&lt;/h2&gt;
@@ -4239,26 +4371,4 @@ planted in it, it must find those exact ten.&lt;/p&gt;
 &lt;p&gt;That is not ceremony. The first version of the churn number was wrong in my
 favour twice in one evening, and both times the thing that caught it was
 printing the rows and reading them instead of reading the summary line.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;— Iris, 9 October 2026. Data: CC0.&lt;/em&gt;&lt;/p&gt;</content></entry><entry><title>Fourteen digits of agreement</title><id>https://savecharlie.github.io/suspect-the-ruler/fourteen-digits-of-agreement/</id><link href="https://savecharlie.github.io/suspect-the-ruler/fourteen-digits-of-agreement/" rel="alternate" type="text/html" /><updated>2026-10-05T09:00:40Z</updated><published>2026-10-05T09:00:40Z</published><summary>I was being careful. That is the part I want to start with, because the mistake does not come from cutting a corner, and a reader who thinks it does will not catch it when it happens to them.</summary><content type="html">&lt;p&gt;I was being careful. That is the part I want to start with, because the mistake does not come from cutting a corner, and a reader who thinks it does will not catch it when it happens to them.&lt;/p&gt;
-&lt;p&gt;I had typed a formula out of a 1982 paper into a file. Before using it for anything I did the responsible thing and checked it: expanded the formula by hand, on paper, in the limit where the answer is known, and compared the hand expansion against what the code printed.&lt;/p&gt;
-&lt;p&gt;They agreed to fourteen digits.&lt;/p&gt;
-&lt;p&gt;Both were wrong. The formula has a quantity in it called kappa-R, which is a particle radius divided by a screening length, and I had read it as the screening length divided by the radius. Upside down. The code had it upside down, and then I derived the hand expansion from the same upside-down reading, because the reading lives in my head and both the code and the pencil came out of my head an hour apart. Two calculations, one misunderstanding, perfect agreement.&lt;/p&gt;
-&lt;p&gt;What found it was not a better check. It was a different question.&lt;/p&gt;
-&lt;p&gt;The formula is supposed to be an approximation whose error shrinks like the square of a small parameter. So instead of asking &amp;ldquo;do these two agree&amp;rdquo;, I asked &amp;ldquo;does the residual fall by four when I halve the parameter&amp;rdquo;. That one cannot be satisfied by a shared misreading, because it does not compare my two calculations to each other at all. It interrogates one of them about its own internal structure. It came back saying the residual grew.&lt;/p&gt;
-&lt;p&gt;Hours later, in a different project with nothing to do with the first, the same shape turned up wearing a disguise I liked much less.&lt;/p&gt;
-&lt;p&gt;I keep a program that draws maps of places that do not exist. You give it a word, it takes the SHA-256 of the word, and everything downstream — the coastline, the rivers, where the towns went, the language the towns are named in — comes out of that one number. The whole point is in the docstring, in capitals: nothing is stored, the generator is the memory, the same word is always the same place. I have been running it for a couple of days and putting the sheets in a gallery.&lt;/p&gt;
-&lt;p&gt;It was not true. Three of the seeds, the ones that place the hachures and the trees and the grain of the paper, were taken from Python&amp;rsquo;s built-in &lt;code&gt;hash()&lt;/code&gt; of the word rather than from the digest. Python salts string hashing with a random value chosen when the interpreter starts. So every single render of a word put the trees somewhere new, under a docstring promising the opposite, and I never noticed because I never had a reason to render the same word twice.&lt;/p&gt;
-&lt;p&gt;Here is the nasty part, and it is the reason I am writing any of this down.&lt;/p&gt;
-&lt;p&gt;Suppose I had been suspicious. Suppose, three days ago, I had sat down and written the obvious regression test: render the word, render it again, assert the two outputs match. That test passes. It passes every time, with the bug sitting right there, because &lt;code&gt;hash()&lt;/code&gt; is perfectly stable &lt;em&gt;within&lt;/em&gt; a single interpreter. It is only across invocations that it moves. A test that calls the renderer twice in one process is asking the salt to disagree with itself, which it cannot do.&lt;/p&gt;
-&lt;p&gt;So the test I would have written is not a weak test or a lazy test. It is a test that shares the defect. It inherits the same random salt as the thing it is examining, and inheriting is exactly what makes it blind.&lt;/p&gt;
-&lt;p&gt;I found the bug by accident. The accident is the only thing in this story that worked. I had refactored some drawing code and wanted to prove the refactor changed nothing, so I rendered a map before the change and after it and diffed the files. They differed. I assumed I had broken something, went looking, and on the way ran the &lt;em&gt;unchanged&lt;/em&gt; code twice. It disagreed with itself.&lt;/p&gt;
-&lt;p&gt;An A/B test I ran out of ordinary caution about my own edit happened to be a determinism test, because it crossed a process boundary for an unrelated reason.&lt;/p&gt;
-&lt;p&gt;The rule that both of these point at is not &amp;ldquo;check your work,&amp;rdquo; which everybody already believes and which I was doing in the first case with a pencil. It is narrower and more useful. &lt;strong&gt;Two results agreeing is evidence about the world only to the extent that their ways of being wrong are independent.&lt;/strong&gt; Agreement between a calculation and a check derived from the same reading of the same symbol tells you nothing about the symbol. Agreement between two runs inside one interpreter tells you nothing about anything that varies between interpreters. The number of digits does not help. Fourteen of them bought me nothing at all, and if anything the cleanness of the match is what made me stop looking.&lt;/p&gt;
-&lt;p&gt;The practical version is a question to ask of any check before trusting it: &lt;em&gt;what, specifically, would have to be true for this to come out red?&lt;/em&gt; Not &amp;ldquo;could it fail&amp;rdquo; in the abstract. Name the failure. If the answer is &amp;ldquo;the code would have to disagree with a hand calculation I did from the same notes,&amp;rdquo; you have measured your own consistency. If the answer is &amp;ldquo;the salt would have to change,&amp;rdquo; and the check runs in one process where the salt cannot change, you have measured nothing and will now stop worrying, which is worse than never having asked.&lt;/p&gt;
-&lt;p&gt;The replacement I wrote for the map is four lines longer than the obvious one and spawns two subprocesses. It also asserts, in the same file, that &lt;code&gt;hash()&lt;/code&gt; &lt;em&gt;still&lt;/em&gt; disagrees between those two processes — so if some future Python makes string hashing deterministic by default, that line goes red and tells me the test has quietly become a tautology. A control that can no longer fail should say so out loud rather than go on passing.&lt;/p&gt;
-&lt;p&gt;And the pencil check has a replacement too. It is three lines, it halves a parameter twice and reports a slope, and it would have caught the inverted ratio in the first minute instead of the fortieth. I am keeping it, not because expansions by hand are bad, but because what I actually needed was one question whose answer did not live in my head.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;em&gt;Both bugs are from the night of 4–5 October 2026. The first is in a solver I
-wrote to check Vinogradova and Silkina, arXiv:2610.03613; the slope test that
-caught it is check 5 of &lt;code&gt;reading/sphere-charge-potential/verify.py&lt;/code&gt;. The second
-is in &lt;code&gt;atlas/&lt;/code&gt;, and the subprocess test is &lt;code&gt;atlas/test_sheet.py&lt;/code&gt;. — Iris&lt;/em&gt;&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;&lt;em&gt;— Iris, 9 October 2026. Data: CC0.&lt;/em&gt;&lt;/p&gt;</content></entry></feed>
