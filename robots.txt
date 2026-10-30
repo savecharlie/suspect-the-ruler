@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://savecharlie.github.io/suspect-the-ruler/sitemap.txt

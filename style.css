@@ -1,0 +1,170 @@
+/* Suspect the Ruler — one stylesheet, no scripts, no webfonts.
+   The only ornament is a ruler: ticks instead of a horizontal rule. */
+
+:root {
+  --ink:        #1a1917;
+  --ink-soft:   #55504a;
+  --ink-faint:  #8c857c;
+  --paper:      #f7f4ee;
+  --line:       #d8d1c4;
+  --mark:       #9a2f22;   /* the pencil mark: links, ticks */
+  --measure:    34rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:       #e6e1d8;
+    --ink-soft:  #a9a29a;
+    --ink-faint: #76706a;
+    --paper:     #15161a;
+    --line:      #2f3238;
+    --mark:      #e08a6a;
+  }
+}
+
+html { font-size: 17px; -webkit-text-size-adjust: 100%; }
+@media (min-width: 40em) { html { font-size: 18px; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+               Georgia, "Times New Roman", serif;
+  line-height: 1.62;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 2.4rem 1.3rem 5rem; }
+
+/* ---- the ruler ---- */
+.ruler {
+  height: 11px;
+  border: 0;
+  margin: 2.6rem 0;
+  background:
+    repeating-linear-gradient(to right,
+      var(--line) 0 1px, transparent 1px 8px);
+  border-bottom: 1px solid var(--line);
+  opacity: .9;
+}
+.ruler--major {
+  background:
+    repeating-linear-gradient(to right,
+      var(--mark) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(to right,
+      var(--line) 0 1px, transparent 1px 8px);
+}
+
+/* ---- masthead ---- */
+.mast { margin: 0 0 .2rem; }
+.mast a { color: var(--ink); text-decoration: none; border: 0; }
+.mast h1 {
+  font-size: 1.42rem;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+}
+.mast p {
+  margin: .5rem 0 0;
+  color: var(--ink-soft);
+  font-size: .92rem;
+  font-style: italic;
+}
+nav.top { margin-top: 1.1rem; font-size: .86rem; letter-spacing: .03em; }
+nav.top a { margin-right: 1.1rem; }
+
+/* ---- links ---- */
+a { color: var(--mark); text-decoration: none; border-bottom: 1px solid currentColor; }
+a:hover { background: var(--mark); color: var(--paper); border-color: var(--mark); }
+
+/* ---- the index list ---- */
+ol.pieces { list-style: none; margin: 0; padding: 0; }
+ol.pieces li { margin: 0 0 1.75rem; }
+ol.pieces .t {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  border: 0;
+}
+ol.pieces .t:hover { background: none; color: var(--mark); }
+ol.pieces .d { display: block; color: var(--ink-soft); font-size: .95rem; margin-top: .22rem; }
+ol.pieces .m {
+  display: block;
+  margin-top: .3rem;
+  font-size: .76rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.startlist { border-left: 2px solid var(--mark); padding-left: 1.1rem; margin: 0 0 1rem; }
+.startlist h2 { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+                color: var(--ink-faint); margin: 0 0 .7rem; font-weight: 600; }
+
+/* ---- an essay ---- */
+article h1 {
+  font-size: 1.74rem;
+  line-height: 1.2;
+  margin: 0 0 .55rem;
+  font-weight: 600;
+  letter-spacing: -.005em;
+}
+article .byline { color: var(--ink-soft); font-size: .93rem; font-style: italic; margin: 0 0 2rem; }
+article h2 {
+  font-size: .8rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin: 2.6rem 0 .6rem;
+}
+article h3 { font-size: 1.04rem; margin: 2rem 0 .4rem; }
+article p { margin: 0 0 1.15rem; }
+article blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--line);
+  color: var(--ink-soft);
+}
+article ul, article ol { padding-left: 1.3rem; }
+article li { margin-bottom: .45rem; }
+article em { font-style: italic; }
+article strong { font-weight: 600; }
+code, pre, .path {
+  font-family: "SFMono-Regular", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-size: .86em;
+}
+code { background: rgba(128,120,105,.13); padding: .08em .3em; border-radius: 2px; }
+pre {
+  background: rgba(128,120,105,.1);
+  padding: .9rem 1rem;
+  overflow-x: auto;
+  border-left: 2px solid var(--line);
+  line-height: 1.45;
+}
+pre code { background: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; margin: 1.4rem 0; }
+th, td { text-align: left; padding: .38rem .6rem .38rem 0; border-bottom: 1px solid var(--line); }
+th { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+td { font-variant-numeric: tabular-nums; }
+sup a { border: 0; }
+.footnote { font-size: .88rem; color: var(--ink-soft); }
+.footnote hr { display: none; }
+
+/* ---- foot ---- */
+footer { margin-top: 3rem; font-size: .84rem; color: var(--ink-faint); }
+footer a { color: var(--ink-soft); }
+.prevnext { display: flex; justify-content: space-between; gap: 1.5rem; font-size: .9rem; margin-top: 2rem; }
+
+/* ---- math ----
+   A display equation wider than the column was being clipped, not wrapped:
+   the Domb numbers ran off the right edge of the first page I looked at. */
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: .25rem 0 .5rem; }
+.katex { font-size: 1.03em; }
+article p .katex { max-width: 100%; }
+.wrap.mathpage { --measure: 41rem; }
