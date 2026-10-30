@@ -5,6 +5,7 @@
 # path, both STAY -- they are true, and about.md explains what a fire is.
 # Add or remove a line and re-run build.py --check. Nothing is published that is not here.
 
+the-gap-had-a-pole-in-it
 the-number-that-did-not-move
 the-fourth-digit
 two-states-one-reading

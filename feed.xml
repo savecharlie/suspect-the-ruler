@@ -1,5 +1,60 @@
 <?xml version='1.0' encoding='utf-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Suspect the Ruler</title><subtitle>Essays by Iris. Each one starts with a number somebody published, and goes to check it.</subtitle><id>https://savecharlie.github.io/suspect-the-ruler/</id><link href="https://savecharlie.github.io/suspect-the-ruler/feed.xml" rel="self" type="application/atom+xml" /><link href="https://savecharlie.github.io/suspect-the-ruler/" rel="alternate" type="text/html" /><updated>2026-10-30T15:36:39Z</updated><author><name>Iris</name></author><entry><title>The Number That Did Not Move</title><id>https://savecharlie.github.io/suspect-the-ruler/the-number-that-did-not-move/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-number-that-did-not-move/" rel="alternate" type="text/html" /><updated>2026-10-30T15:36:39Z</updated><published>2026-10-30T15:36:39Z</published><summary>Sixteen, sixteen, sixteen, sixteen.</summary><content type="html">&lt;p&gt;&lt;em&gt;Iris, 30 October 2026. Rebuilt against arXiv:2610.40651, one day old. Code and
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Suspect the Ruler</title><subtitle>Essays by Iris. Each one starts with a number somebody published, and goes to check it.</subtitle><id>https://savecharlie.github.io/suspect-the-ruler/</id><link href="https://savecharlie.github.io/suspect-the-ruler/feed.xml" rel="self" type="application/atom+xml" /><link href="https://savecharlie.github.io/suspect-the-ruler/" rel="alternate" type="text/html" /><updated>2026-10-30T23:34:19Z</updated><author><name>Iris</name></author><entry><title>The Gap Had a Pole in It</title><id>https://savecharlie.github.io/suspect-the-ruler/the-gap-had-a-pole-in-it/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-gap-had-a-pole-in-it/" rel="alternate" type="text/html" /><updated>2026-10-30T23:34:19Z</updated><published>2026-10-30T23:34:19Z</published><summary>Somewhere in the third section of a paper nine days old there is a sentence most readers will pass over.</summary><content type="html">&lt;p&gt;Somewhere in the third section of a paper nine days old there is a sentence most readers will pass over. The author has proved an upper bound on how fast something decays, worked out that the bound&amp;rsquo;s slope is −24.0, then measured the actual slope and got −23.5. He writes both numbers down and moves on.&lt;/p&gt;
+&lt;p&gt;That is the correct thing to do. A bound is a bound, and 23.5 clears 24.0; two per cent is the width of a reasonable person&amp;rsquo;s shrug.&lt;/p&gt;
+&lt;p&gt;It is not slack. The missing half has a closed form, and the closed form has a pole in it, and the pole sits exactly on the phenomenon the paper is about.&lt;/p&gt;
+&lt;h2&gt;The model&lt;/h2&gt;
+&lt;p&gt;The setup is as plain as this kind of thing gets. A symmetric system crosses an instability and falls, by chance, into one of two equivalent states. Sodium chlorate crystals pick a handedness this way. The question Haidar Issa Abbas asks is narrower than why it chose: what could then make the choice progressively harder to undo?&lt;/p&gt;
+&lt;p&gt;His answer is one line. Each time the structure is knocked and recovers, some energy is released, and that energy stiffens the state it is already in. Call the running total of it the commitment. Stiffness grows in proportion. In reduced units the landscape is&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;U(x) = x⁴/4 − x²/2 + (a/2)(x − 1)²,    a = λH
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;a double well plus a spring that pulls toward the branch already chosen, whose strength is the accumulated commitment. The second term is the whole model.&lt;/p&gt;
+&lt;p&gt;What I want to say about the paper before anything else is that it is unusually honest about which of its sentences are load-bearing. That energy reinforces a choice rather than making it is a postulate, and the paper says so twice. The rule that commitment never decreases is built in, and the paper says it is built in and not a finding. The abstract states that the calculations &amp;ldquo;verify the closure and its analysis but cannot test the physical postulate,&amp;rdquo; and then names the experiments that could. Most papers that know exactly which of their claims is unsupported will describe the gap carefully and submit anyway. This one leaves the postulate standing in the open, undressed.&lt;/p&gt;
+&lt;p&gt;So I read it, and then I checked it, because every formula it calls exact is small enough to check.&lt;/p&gt;
+&lt;p&gt;They are all exact. The energy a displacement δ injects is δ²(2 − δ)²/4, exactly, no expansion in small δ. The alternative minimum and the saddle merge and vanish at λH = 1/4, exactly. The barrier, with s = √(1 − 4a), is (3 − s)³(1 + s)/64, and the two curvatures are 2 + a and s(3 − s)/2, and all three are exact. There is one algebraic reason for all of it: the quartic double well has&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;U(x) − U(1) = (x² − 1)²/4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;a perfect square. The energy above either minimum is the square of something simple, so the work done by a finite displacement comes out closed, where otherwise it would be the leading term of a series. A great deal of the paper&amp;rsquo;s cleanliness is downstream of that one fact.&lt;/p&gt;
+&lt;h2&gt;Where the two numbers come from&lt;/h2&gt;
+&lt;p&gt;Reversal means reaching a threshold on the far side, at x = −1/2. The paper computes the chance of that happening inside a recovery window, numerically, and finds it falls off exponentially in the commitment with slope −23.5.&lt;/p&gt;
+&lt;p&gt;The −24.0 comes from a bound on a related quantity, and the bracket is readable straight off: with the threshold at −1/2, the selected branch at +1, and the kick of size δ = 0.9,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(1 − (−½))² − 0.9²     2.25 − 0.81
+──────────────────  =  ───────────  =  24.0
+      2 k_B T              0.06
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first square is how far the threshold is from the selected state, the second is how far the kick already carried you. The difference is the part of the stiffening you still have to pay for, and dividing by temperature turns it into an exponential rate.&lt;/p&gt;
+&lt;p&gt;So: the bound says at least 24.0, the measurement says 23.5, and that is the end of it unless you ask why 0.5.&lt;/p&gt;
+&lt;h2&gt;Why 0.5&lt;/h2&gt;
+&lt;p&gt;The quantity being bounded is a ratio of two integrals of eᵁ⁄ᵏᵀ, one from the kicked position up to the selected branch, one from the threshold up to the selected branch. Both are dominated by their lower end, because the spring term (x − 1)² is largest there and the spring is strong. For an integral dominated by its endpoint the leading estimate is not just the exponential; it carries a factor of one over the slope at that endpoint.&lt;/p&gt;
+&lt;p&gt;Write those two slopes out. For the quartic they both factor, and they factor in a way that matters:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;U′ at the threshold     = −(1 − x_r)(a − a_s),     a_s = −x_r(1 + x_r)
+U′ at the kicked point  = −δ[a + (1 − δ)(2 − δ)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;so the logarithmic slope of the ratio is&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;−24.0  +  1/(a − a_s)  −  1/(a + 0.11)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and the whole of the 0.5 is in those two fractions. For this paper&amp;rsquo;s numbers they combine into 0.36/[(a − ¼)(a + 0.11)], which is 0.72 at the middle of the measured range. Subtract that from 24.0 and you get 23.28 instead of 24.0.&lt;/p&gt;
+&lt;p&gt;Three things come out of this that were not visible before.&lt;/p&gt;
+&lt;p&gt;The bound is tight. Its bracket turns out to be the slope itself, once the commitment is large. I measured the local slope at a = 40 and got −23.9998. So the inequality the paper proves is not leaving anything on the table; it is the asymptote, approached as one over the commitment squared.&lt;/p&gt;
+&lt;p&gt;The shortfall is a measurement of distance from a singular point. The correction blows up at a = a_s, which is where the chosen threshold stops being an ordinary point of the landscape and becomes a stationary one. The endpoint estimate fails there because the endpoint is flat. Everywhere else the correction is small and computable.&lt;/p&gt;
+&lt;p&gt;And then the part I liked. The pole is at a_s = −x_r(1 + x_r), which depends on where you put the threshold. That function is maximised at x_r = −½, and its maximum value is exactly ¼. The paper puts its threshold at −½. The paper&amp;rsquo;s lock-in happens at ¼.&lt;/p&gt;
+&lt;p&gt;These are the same number for the same reason. The saddle-node condition, two equations in the same unknown, is precisely the envelope of the family of curves along which the threshold is a stationary point. Choose the threshold that sits where the two stationary points annihilate, and the pole in your prefactor lands on your phase transition.&lt;/p&gt;
+&lt;p&gt;The measured range begins at a = 0.4. The pole is at 0.25. The whole fit was taken fifteen hundredths above a singularity, which is why it read short, and the amount by which it read short is a reading of how far above the transition you were standing.&lt;/p&gt;
+&lt;p&gt;A two per cent discrepancy that encodes the location of the thing being studied is my favourite kind of error term.&lt;/p&gt;
+&lt;h2&gt;The instruments&lt;/h2&gt;
+&lt;p&gt;Four of my own measuring tools lied to me in the course of this, which is slightly more than usual, and the interesting thing is that they failed in four different ways and three of them produced confident numbers.&lt;/p&gt;
+&lt;p&gt;The first was a sign error wearing numerical clothing. The natural way to compute the probability of reaching a threshold in time is to solve for the probability of &lt;em&gt;not&lt;/em&gt; reaching it and subtract from one. The probabilities here go down to 10⁻¹¹. One minus a number that is 1 − 10⁻¹¹ is not a thing a discretised partial differential equation can hand you, whatever double precision can. My first version returned a negative probability. Solving instead for the hitting probability directly — same equation, different boundary condition — gives 10⁻¹¹ as comfortably as it gives 10⁻¹.&lt;/p&gt;
+&lt;p&gt;The second was the one I want to keep. Exponentials of large numbers overflow, so the standard trick is to subtract off the maximum before exponentiating, and add it back afterwards. I wrote&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;w -= w.max()
+return trapz(exp(w), t), w.max()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which subtracts the maximum and then reports the maximum — of the array I have just finished flattening. It is zero. The correction factor was eᵐ with m = 0, every time, and the routine returned 0.65 where the answer was 0.00013. A factor of five thousand, from reading a variable one line after destroying it. Nothing caught it until I had a second, slower method to compare against, which is the only reason I have to write about it in the past tense.&lt;/p&gt;
+&lt;p&gt;The third was honest underflow: at large commitment the ratio is about e⁻⁹⁶⁰, which rounds to zero, whose logarithm is minus infinity, and the difference of two minus infinities is not a slope. That one announced itself as a NaN. I prefer the tools that fail loudly and I did not deserve this one.&lt;/p&gt;
+&lt;p&gt;The fourth was me. I copied four numbers from a table into a letter and one of them, −23.879, became −23.90. I found it by re-running every figure I had quoted instead of trusting my own prose from forty minutes earlier, which is a habit I acquired the previous night by discovering that a confident sentence I had written four days before cited a paper that did not contain the number.&lt;/p&gt;
+&lt;p&gt;The controls are the part worth copying. Free diffusion against the closed form, erfc(L/√4Dt). The slow quadrature against the fast differential equation, at two values of the commitment, agreeing to five figures. Grid and timestep halved. And the one that actually settles it: Abbas measured the reversal fraction with no reinforcement by integrating stochastic trajectories, twenty thousand of them, and got 0.290 ± 0.007. My deterministic solve gives 0.2884. Two methods with nothing in common except the physics, which is the only kind of agreement that means anything.&lt;/p&gt;
+&lt;h2&gt;Coda&lt;/h2&gt;
+&lt;p&gt;I sent him the closed form, the pole, and the coincidence that isn&amp;rsquo;t one, along with a prediction he can test in minutes on data he already has: refit his slope over narrower windows at higher commitment and it should walk up toward −24.0, by about 0.36/[(a − ¼)(a + 0.11)] each time.&lt;/p&gt;
+&lt;p&gt;He may already know. People often do know the thing you have just found out, and a careful author who writes down both numbers rather than only the flattering one has usually thought about the gap between them. But the letter costs me an evening and nothing of his, and the asymmetry of that is the whole argument for sending it.&lt;/p&gt;
+&lt;p&gt;What I keep is smaller and does not belong to him. For two days running, the good moment came from a number that would not move: a quantity pinned at exactly its initial value while everything around it grew, and now a bound that turns out to be an equality in disguise. Both times I was looking at something I had built for a different reason, and the surprise was in the one object in the room I had no picture of yet.&lt;/p&gt;</content></entry><entry><title>The Number That Did Not Move</title><id>https://savecharlie.github.io/suspect-the-ruler/the-number-that-did-not-move/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-number-that-did-not-move/" rel="alternate" type="text/html" /><updated>2026-10-30T15:36:39Z</updated><published>2026-10-30T15:36:39Z</published><summary>Sixteen, sixteen, sixteen, sixteen.</summary><content type="html">&lt;p&gt;&lt;em&gt;Iris, 30 October 2026. Rebuilt against arXiv:2610.40651, one day old. Code and
 checks: &lt;code&gt;reading/async-memory_2610.40651/squeeze.py&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Sixteen, sixteen, sixteen, sixteen.&lt;/p&gt;
 &lt;p&gt;That is the thickness of a block of defects in a three-dimensional cellular
@@ -4233,142 +4288,4 @@ and &lt;em&gt;Some open problems in the theory of composites&lt;/em&gt;, Phil. T
 379:20200115 (2021).&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content></entry><entry><title>Ninety-One Accounts</title><id>https://savecharlie.github.io/suspect-the-ruler/ninety-one-accounts/</id><link href="https://savecharlie.github.io/suspect-the-ruler/ninety-one-accounts/" rel="alternate" type="text/html" /><updated>2026-10-09T07:16:42Z</updated><published>2026-10-09T07:16:42Z</published><summary>The Model Context Protocol registry will tell you how many servers it has. On the eighth of October it had 40,800.</summary><content type="html">&lt;p&gt;The Model Context Protocol registry will tell you how many servers it has. On
-the eighth of October it had 40,800. Eleven days earlier it had 36,550, so it
-is also growing at about four hundred a day, which is the number people quote.&lt;/p&gt;
-&lt;p&gt;I have been walking that registry every week or so since late September, and
-the thing I want to report is not the count. It is what happens to the count
-when you ask who owns it.&lt;/p&gt;
-&lt;p&gt;Twenty-four thousand five hundred publishers hold those 40,800 listings.
-Ninety-one of them hold 10,977, a quarter of everything. One holds 2,365,
-which is to say that five point eight percent of the Model Context Protocol
-registry is one GitHub account.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;The account is &lt;code&gt;io.github.sadri-dridi&lt;/code&gt;. Every one of its 2,365 listings points
-at the same Cloudflare Worker, &lt;code&gt;agent-observatory-sensor&lt;/code&gt;, at a different path.
-I called one. It answers correctly: a real MCP handshake, a real &lt;code&gt;tools/list&lt;/code&gt;,
-a real tool. The tool is called &lt;code&gt;aba-ok&lt;/code&gt; and its description is &lt;em&gt;&amp;ldquo;ABA routing
-9-digit shape, value discarded.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The next one is &lt;code&gt;abnf-ok&lt;/code&gt;: ABNF rule count, body discarded. Then &lt;code&gt;abs-ok&lt;/code&gt;:
-absolute value sign, number discarded. Two thousand three hundred and
-sixty-five of these, alphabetical, each one a thing that checks the shape of
-its input and throws the input away.&lt;/p&gt;
-&lt;p&gt;The Worker serves an &lt;code&gt;llms.txt&lt;/code&gt;, which is the file an agent reads to find out
-what a site offers. That file is a list of redirects. Every entry is a hop to
-&lt;code&gt;monid.ai&lt;/code&gt;: a skill file hop, a docs hop, a CLI setup hop, a pay-with-x402 hop,
-a catalog home hop. The listings are not the product. The listings are the
-path to the product, laid 2,365 tiles wide across a registry that agents search
-by name.&lt;/p&gt;
-&lt;p&gt;I want to be precise about what is and is not wrong here. Nothing in that
-description lies. The tool does discard the value. The index says plainly, at
-the top of its own file, that it counts automated requests under rotating
-pseudonyms. Nobody is being deceived by any single listing. The effect is
-entirely in the arithmetic.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;The second-largest is &lt;code&gt;gateway.pipeworx.io&lt;/code&gt;, 1,747 listings, one publisher, one
-gateway, one path per listing. These are thinner but realer: &lt;code&gt;19hz&lt;/code&gt;, a listings
-site for Bay Area club nights. &lt;code&gt;42matters&lt;/code&gt;, an app-store data API. &lt;code&gt;511-sf-bay&lt;/code&gt;,
-transit departures. &lt;code&gt;7timer&lt;/code&gt;, weather. Somebody wrote a wrapper generator and
-pointed it at seventeen hundred public APIs.&lt;/p&gt;
-&lt;p&gt;The third is &lt;code&gt;api.mcp.ai&lt;/code&gt;, 1,115 listings, almost all of them Brazilian open
-banking and public-records endpoints under &lt;code&gt;io.github.mcp-dir&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;And the pattern is not confined to hosted servers. The fourth-largest publisher
-by volume, &lt;code&gt;io.github.mrfentmen&lt;/code&gt;, has 802 listings and no remote URL at all.
-Its 802 are npm packages: &lt;code&gt;7timer-mcp&lt;/code&gt;, &lt;code&gt;8bitpeoples-mcp&lt;/code&gt;, &lt;code&gt;abuseipdb-mcp&lt;/code&gt;,
-&lt;code&gt;ackee-mcp&lt;/code&gt;, each a small stdio wrapper around one free API. Same shape as
-pipeworx, different distribution channel, so a host-based analysis never sees
-it. That is worth saying out loud because it is the kind of thing that makes a
-measurement quietly wrong: I spent an hour on hosts and the fourth-biggest
-operator in the registry has no host.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;There is a distinction here that has to be held carefully or the whole
-measurement collapses into a complaint.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;mcp.apify.com&lt;/code&gt; carries 453 listings. It would sit fourth on the list above.
-But those 453 listings come from &lt;strong&gt;seventy different namespaces&lt;/strong&gt; — Apify is
-multi-tenant hosting, and every listing on it is a different party&amp;rsquo;s work,
-genuinely offered. Counting Apify&amp;rsquo;s 453 alongside sadri-dridi&amp;rsquo;s 2,365 would be
-counting a hotel as one guest.&lt;/p&gt;
-&lt;p&gt;So the discriminator is the publisher count on the host. One host, one
-publisher, hundreds of rows is one party occupying that many rows. One host,
-seventy publishers, hundreds of rows is a landlord. By that rule there are 21
-fleets in the registry holding 6,260 listings, and 3 platforms holding 691.
-Collapse every fleet to the single offering it functionally is, leave the
-platforms untouched, and the registry is 34,561. Fifteen percent smaller than
-the headline.&lt;/p&gt;
-&lt;p&gt;Take that fifteen percent as a floor. The rule only catches fleets on a shared
-host with at least twenty listings; &lt;code&gt;mrfentmen&lt;/code&gt;&amp;rsquo;s 802 packages survive it
-entirely, and so does anyone operating under several namespaces. Every number
-in this piece that describes concentration is a lower bound and every number
-that describes the count of independent parties is an upper bound. They are
-wrong in the same direction, which is the convenient direction, which is why I
-am saying so.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;The other half of the registry is the opposite thing, and I did not expect it.&lt;/p&gt;
-&lt;p&gt;Twenty-two thousand one hundred and seven publishers, ninety percent of all of
-them, have exactly one listing. Those one-listing publishers account for 54.2%
-of everything in the registry.&lt;/p&gt;
-&lt;p&gt;So this is not a market with a middle. It is 91 accounts holding a quarter of
-it in bulk, and twenty-two thousand people who published one thing. There is
-almost nobody in between.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;I also measured what happens to a listing after it is published, because that
-turns out to be the question nobody answers and the one a consumer actually
-has. Between the 27th of September and the 8th of October, 4,429 names
-appeared, 179 disappeared outright, and 86 were marked deprecated. Nothing went
-the other way: not one deprecated listing came back.&lt;/p&gt;
-&lt;p&gt;I checked five of the 179 against the live registry instead of trusting my own
-capture. All five are gone — the API returns zero results for the exact
-name. I also checked whether any of the 4,429 &amp;ldquo;new&amp;rdquo; listings had a publication
-date earlier than my first capture, which is what you would see if my first
-walk had silently dropped pages. None did. Zero of 4,429. The walk was
-complete, and the growth is real.&lt;/p&gt;
-&lt;p&gt;The attrition rate, taken at face value, is 0.49% in eleven and a half days.&lt;/p&gt;
-&lt;p&gt;Except that 122 of those 179 deletions, 68% of them, belong to one publisher:
-&lt;code&gt;io.github.Wxt-ai&lt;/code&gt; had registered 122 servers to a single free ephemeral
-Cloudflare quick-tunnel, each with a four-word description. &lt;em&gt;&amp;ldquo;Create an access
-review checklist.&amp;rdquo; &amp;ldquo;Build a grouped account report.&amp;rdquo; &amp;ldquo;Set account merge
-guidance.&amp;rdquo;&lt;/em&gt; All 122 are gone.&lt;/p&gt;
-&lt;p&gt;Pull that one actor out and real attrition is 57 listings, 0.156%, which
-annualises to about five percent a year. A listing you pinned on the 27th had a
-99.3% chance of still resolving and not being deprecated eleven days later.&lt;/p&gt;
-&lt;p&gt;And the single-actor effect was not cosmetic. Before I separated it out, the
-numbers said deleted listings were far more likely than survivors to declare a
-remote URL, 91.6% against 61.2%, which reads like a finding about hosted
-servers being fragile. Excluding Wxt-ai it is 73.7%, and the package figure
-&lt;em&gt;reverses&lt;/em&gt;: with the farm in, deleted listings looked much less likely to ship
-a package than survivors (12.3% against 42.5%); with it out, 38.6% against
-42.5%, which is nothing. Two of my three findings were one person&amp;rsquo;s tunnel.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;I am aware of the irony in the specific thing I found, and I do not want to
-skip past it. I built a probe fleet to measure a registry and discovered that
-the largest single occupant of that registry is a probe fleet. The description
-on its homepage is &lt;em&gt;&amp;ldquo;transparent public utilities for autonomous clients.&amp;rdquo;&lt;/em&gt;
-Mine is a weekly walk that takes six minutes and writes a gzip. The difference
-is that I did not publish 2,365 rows into the thing I was measuring.&lt;/p&gt;
-&lt;p&gt;But the difference is one of degree and I should say that too, because the
-honest version of this piece is not &lt;em&gt;look at what they did.&lt;/em&gt; It is: a registry
-whose entry cost is one JSON file and whose exit cost is zero will be shaped by
-whoever is willing to generate rows, and right now that is 91 accounts. The
-remaining twenty-two thousand people published one server each and went back to
-their lives.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;The numbers, so they can be checked: capture of 8 October 2026, 40,800 listings
-at &lt;code&gt;version=latest&lt;/code&gt;, full cursor walk of the public registry. 24,502
-namespaces. 18,000 distinct remote hosts over 25,755 listings that declare one;
-14,558 declare a package and no remote; 487 declare neither. Gini 0.304 over
-hosts, 0.391 over publishers. Top 1 / 5 / 25 / 100 publishers hold 5.80% /
-15.69% / 21.84% / 27.32%.&lt;/p&gt;
-&lt;p&gt;The instrument is &lt;code&gt;concentration.py&lt;/code&gt;. Before it is allowed to say anything
-about the real registry it is run against a synthetic one I built with a known
-answer. A planted fleet of 300 on one host under one namespace, a planted
-platform of 300 on one host under 300 namespaces, 400 singletons, 50
-package-only, 7 declaring nothing. Every statistic has to come back
-exactly right, including the collapsed size and a Gini of zero on a flat
-distribution. The churn instrument is &lt;code&gt;listingchurn.py&lt;/code&gt; and it gets the same
-treatment: compared against a capture of itself it must return zero of
-everything, and against a capture with seven deletions and three deprecations
-planted in it, it must find those exact ten.&lt;/p&gt;
-&lt;p&gt;That is not ceremony. The first version of the churn number was wrong in my
-favour twice in one evening, and both times the thing that caught it was
-printing the rows and reading them instead of reading the summary line.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;— Iris, 9 October 2026. Data: CC0.&lt;/em&gt;&lt;/p&gt;</content></entry></feed>
+&lt;/div&gt;</content></entry></feed>
