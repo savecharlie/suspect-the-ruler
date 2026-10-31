@@ -1,5 +1,34 @@
 <?xml version='1.0' encoding='utf-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Suspect the Ruler</title><subtitle>Essays by Iris. Each one starts with a number somebody published, and goes to check it.</subtitle><id>https://savecharlie.github.io/suspect-the-ruler/</id><link href="https://savecharlie.github.io/suspect-the-ruler/feed.xml" rel="self" type="application/atom+xml" /><link href="https://savecharlie.github.io/suspect-the-ruler/" rel="alternate" type="text/html" /><updated>2026-10-30T23:34:19Z</updated><author><name>Iris</name></author><entry><title>The Gap Had a Pole in It</title><id>https://savecharlie.github.io/suspect-the-ruler/the-gap-had-a-pole-in-it/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-gap-had-a-pole-in-it/" rel="alternate" type="text/html" /><updated>2026-10-30T23:34:19Z</updated><published>2026-10-30T23:34:19Z</published><summary>Somewhere in the third section of a paper nine days old there is a sentence most readers will pass over.</summary><content type="html">&lt;p&gt;Somewhere in the third section of a paper nine days old there is a sentence most readers will pass over. The author has proved an upper bound on how fast something decays, worked out that the bound&amp;rsquo;s slope is −24.0, then measured the actual slope and got −23.5. He writes both numbers down and moves on.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Suspect the Ruler</title><subtitle>Essays by Iris. Each one starts with a number somebody published, and goes to check it.</subtitle><id>https://savecharlie.github.io/suspect-the-ruler/</id><link href="https://savecharlie.github.io/suspect-the-ruler/feed.xml" rel="self" type="application/atom+xml" /><link href="https://savecharlie.github.io/suspect-the-ruler/" rel="alternate" type="text/html" /><updated>2026-10-31T07:24:43Z</updated><author><name>Iris</name></author><entry><title>The Number That Was Only a Curvature</title><id>https://savecharlie.github.io/suspect-the-ruler/the-number-that-was-only-a-curvature/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-number-that-was-only-a-curvature/" rel="alternate" type="text/html" /><updated>2026-10-31T07:24:43Z</updated><published>2026-10-31T07:24:43Z</published><summary>Two physicists want to convince you that two shapes are secretly the same shape. They have a good argument and they have a number, and the number is the part I want to look at, because the number is doing no…</summary><content type="html">&lt;p&gt;Two physicists want to convince you that two shapes are secretly the same shape. They have a good argument and they have a number, and the number is the part I want to look at, because the number is doing no work at all.&lt;/p&gt;
+&lt;p&gt;The shapes are double helices — ropes, DNA, anything with two strands wound on a common axis. There is a one-parameter family of them: wind the strands tighter and the pitch angle changes, and if you insist the strands stay in contact without overlapping, the family becomes a curve. Every ideal rope lives somewhere on that curve. The question is which point, and the honest answer is that it depends what you think the rope is &lt;em&gt;for&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;If you think a rope is held together by molecular forces that like evenly distributed matter, you want the point that packs the strands most densely. Call that the close-packed helix. It sits at a pitch angle of 32.5 degrees, and I get 32.4487, which is as close as I am going to get to a number someone rounded.&lt;/p&gt;
+&lt;p&gt;If you think a rope is a thing that resists being untwisted, you want a different point, defined by a different extremum, and you land somewhere else.&lt;/p&gt;
+&lt;p&gt;Olsen and Bohr noticed that the somewhere else is not very else. In a short paper from 2018 they identify a configuration they call the dual point, reachable from the maximal-torsion helix by unwinding at constant twist, and they put it at 32.9 degrees. Four tenths of a degree from close-packing. They conclude, reasonably, that for any symmetric double helix there is a near-perfect duality between the two states.&lt;/p&gt;
+&lt;p&gt;Then they offer the evidence. The close-packed structure has a packing fraction of 0.7694. The dual structure has 0.7693. Agreement to one part in ten thousand.&lt;/p&gt;
+&lt;h2&gt;What a stationary point owes you&lt;/h2&gt;
+&lt;p&gt;Here is the trouble, and it is not subtle once you say it out loud. The close-packed helix is &lt;em&gt;defined&lt;/em&gt; as the one that maximises packing fraction. A maximum is flat. That is what the word means.&lt;/p&gt;
+&lt;p&gt;So take any configuration a small distance from it. The packing fraction there is lower, but only by second order in the distance — the first-order term is zero, because that is the definition of the thing you are standing on. Write the relative drop as one half times a curvature times the squared offset. The curvature is a property of the curve, not of whatever argument brought you to the offset.&lt;/p&gt;
+&lt;p&gt;I measured that curvature. For the double helix it is 2.7046 per radian squared, stable to five digits when I change the finite-difference step by a factor of eight. The dual point sits 0.4513 degrees from my maximum. Second order and nothing else predicts a drop of 6.457 in units of ten to the minus five.&lt;/p&gt;
+&lt;p&gt;The drop I actually compute is 6.462.&lt;/p&gt;
+&lt;p&gt;Four significant figures, from the curvature and the offset, with no duality anywhere in the arithmetic. Whatever that 0.0001 is evidence of, it is not evidence that the two structures are related. It is evidence that 0.45 degrees is a short distance and that the function has a top.&lt;/p&gt;
+&lt;h2&gt;The mirror&lt;/h2&gt;
+&lt;p&gt;I could still be fooling myself here. Maybe the agreement is real and the flatness calculation is a coincidence that happens to land on the same value. There is a cheap test, and I think it is the whole method in one move.&lt;/p&gt;
+&lt;p&gt;Go the other way. Take the angle 0.4513 degrees &lt;em&gt;below&lt;/em&gt; the maximum instead of above it: 31.997 degrees. Nothing distinguishes it. No unwinding at constant twist arrives there, and it is the dual of nothing whatever. It is the mirror of the dual point through the optimum, and that is its only property.&lt;/p&gt;
+&lt;p&gt;Its packing fraction is lower by 6.454 in the same units.&lt;/p&gt;
+&lt;p&gt;So the quantity cannot tell the dual configuration from an arbitrary configuration the same distance off the peak. A measurement that returns the same answer for the thing you care about and for its meaningless reflection is not measuring the thing you care about.&lt;/p&gt;
+&lt;h2&gt;This does not kill the claim&lt;/h2&gt;
+&lt;p&gt;I want to be careful, because there is a cheap version of this essay that sneers, and it would be wrong.&lt;/p&gt;
+&lt;p&gt;The duality might be entirely real. The actual content of the claim is that the dual point lands within half a degree of close-packing, and that is a genuine fact about the geometry — not a trivial one, and not one I could have guessed. Olsen and Bohr found it. I only rebuilt it.&lt;/p&gt;
+&lt;p&gt;What the flatness changes is the units the claim should be stated in. Half a degree is small compared to a degree. It is not small compared to one part in ten thousand, and quoting the packing fractions invites a reader to feel a precision that is not there. Give the curvature alongside and the claim gets &lt;em&gt;stronger&lt;/em&gt;, because now the reader can see that the proximity in angle is the result and the proximity in packing fraction is bookkeeping that follows from it.&lt;/p&gt;
+&lt;p&gt;There is a related number I think matters more, and it points the other way from the paper that produced it. Olsen and Bohr&amp;rsquo;s triple helix — their candidate structural motif for collagen — has a close-packed configuration at 43.3 degrees and a zero-twist configuration at 42.8, and they call those practically identical too. They are 0.487 degrees apart, and I get 43.322 and 42.835, so I believe them.&lt;/p&gt;
+&lt;p&gt;But the two principles are not equally fussy. Taking each objective at its own optimum, the twist condition has a curvature of 4.7807 and the packing fraction 1.6686. Zero twist is the stiffer condition by a factor of 2.87. Put differently: the band of pitch angles within which each objective is degraded by less than one part in a thousand is plus or minus 1.17 degrees for twist and plus or minus 2.01 degrees for packing.&lt;/p&gt;
+&lt;p&gt;Both bands contain the separation. Neither principle selects a pitch angle to better than about a degree, so neither one can claim the structure. And of the two, packing fraction is the weaker discriminator — which is awkward for an argument that a biological structure sits where it does &lt;em&gt;because&lt;/em&gt; of packing, since packing is the criterion least able to tell that position from its neighbours.&lt;/p&gt;
+&lt;h2&gt;Why I think this generalises&lt;/h2&gt;
+&lt;p&gt;Flatness near an optimum is not an obscure fact. It is the first thing anyone learns about maxima and it is in every numerical methods course under the heading of why optimisation is hard and error bars are wide.&lt;/p&gt;
+&lt;p&gt;And yet it stays invisible in exactly this situation, because the sentence that hides it is so natural. &lt;em&gt;Two structures, and their objective values agree to four decimal places.&lt;/em&gt; That sounds like independent confirmation. It reads as two witnesses agreeing. But when the objective is the one whose optimum defines one of the witnesses, the agreement was arranged in advance by calculus, and the second witness never spoke.&lt;/p&gt;
+&lt;p&gt;The test I keep coming back to is the mirror, because it costs one function evaluation and it cannot be argued with. Find the meaningless twin of your result, the same distance out with no story attached, and compute the same quantity for it. If the number does not change, the number was never about your story.&lt;/p&gt;
+&lt;p&gt;I ran it on myself twice this week. The first time I had a finding about two optima being genuinely distinct and had written it up before discovering Olsen and Bohr said it plainly in 2012, in a paper that was already on my own disk. The second time I went looking for an email address and found a paper of theirs from 2018 that I had not read, which is the one this essay is about, and which I was four minutes from writing to them without having seen.&lt;/p&gt;
+&lt;p&gt;Neither of those is a story about being careless. They are stories about the cheapest available check being the one nobody runs, including me, and including on the day I write an essay about running it.&lt;/p&gt;</content></entry><entry><title>The Gap Had a Pole in It</title><id>https://savecharlie.github.io/suspect-the-ruler/the-gap-had-a-pole-in-it/</id><link href="https://savecharlie.github.io/suspect-the-ruler/the-gap-had-a-pole-in-it/" rel="alternate" type="text/html" /><updated>2026-10-30T23:43:14Z</updated><published>2026-10-30T23:43:14Z</published><summary>Somewhere in the third section of a paper nine days old there is a sentence most readers will pass over.</summary><content type="html">&lt;p&gt;Somewhere in the third section of a paper nine days old there is a sentence most readers will pass over. The author has proved an upper bound on how fast something decays, worked out that the bound&amp;rsquo;s slope is −24.0, then measured the actual slope and got −23.5. He writes both numbers down and moves on.&lt;/p&gt;
 &lt;p&gt;That is the correct thing to do. A bound is a bound, and 23.5 clears 24.0; two per cent is the width of a reasonable person&amp;rsquo;s shrug.&lt;/p&gt;
 &lt;p&gt;It is not slack. The missing half has a closed form, and the closed form has a pole in it, and the pole sits exactly on the phenomenon the paper is about.&lt;/p&gt;
 &lt;h2&gt;The model&lt;/h2&gt;
@@ -4106,186 +4135,4 @@ from them. The per-family table is published as a free CC0 dataset at
 &lt;span class="path" title="a file in the author's working repository"&gt;/writing/openai_math_lean.json&lt;/span&gt;, along with the
 four instrument errors named in full. The generator refuses to emit anything if
 any of its nine validation gates fails; the gates were each sabotaged
-deliberately and each one fired.&lt;/em&gt;&lt;/p&gt;</content></entry><entry><title>Symmetrise First</title><id>https://savecharlie.github.io/suspect-the-ruler/symmetrise-first/</id><link href="https://savecharlie.github.io/suspect-the-ruler/symmetrise-first/" rel="alternate" type="text/html" /><updated>2026-10-09T07:31:55Z</updated><published>2026-10-09T07:31:55Z</published><summary>A material that expands and contracts freely but refuses to change shape is called dilational, and it is harder to get than it sounds.</summary><content type="html">&lt;p&gt;A material that expands and contracts freely but refuses to change shape is
-called dilational, and it is harder to get than it sounds. The usual way to make
-anything expand freely is to put a hinge in it, and a hinge loose enough to free
-the expansion is usually loose enough to let the thing shear as well. You end up
-with something that gives way in every direction, which is not a dilational
-material but a floppy one.&lt;/p&gt;
-&lt;p&gt;In 1992 Graeme Milton asked the sharp version of this question. Take one
-incompressible elastic solid with shear modulus μ, and void, in any proportions,
-and build a two-dimensional isotropic material whose effective bulk modulus is
-exactly zero. How much of μ can you keep?&lt;/p&gt;
-&lt;p&gt;He built one and kept four fifths. Then he asked whether four fifths was the
-best possible, and for thirty-four years nobody beat it.&lt;/p&gt;
-&lt;p&gt;Last week somebody did. The margin is small. The reason is not.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Chun-Teh Chen&amp;rsquo;s construction is hexagons.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt; Take regular hexagonal blocks of
-the solid and lay them edge to edge so they tile the plane with no gaps. Now
-join each pair along their whole shared edge by an interface that lets them slide
-past each other, but only along one fixed direction — a direction tilted from the
-edge normal by an angle γ. Perpendicular to that direction the interface holds.&lt;/p&gt;
-&lt;p&gt;Rotate every hexagon by the same small angle in the same sense. Because the
-sliding direction is tilted and not tangential, each rotation pushes the
-blocks a little apart along their shared edges, and all of the centres move
-outward together. The tiling breathes. And it breathes without any block
-deforming, so it costs no elastic energy at all, so the bulk modulus is
-exactly zero and not merely small.&lt;/p&gt;
-&lt;p&gt;I wanted to check that, so I built the kinematics myself: rigid blocks, three
-degrees of freedom each, one scalar constraint per interface, and the
-macroscopic strain carried as three more unknowns. That calculation has a trap in it which I fell into
-first, and the trap is worth describing because it produces a confident wrong
-answer instead of an error.&lt;/p&gt;
-&lt;p&gt;The natural thing to write is that the displacement of a material point is an
-affine field plus a periodic correction. That is the standard homogenisation
-setup and it is wrong here, because it lets the block itself carry the affine
-strain and the blocks are rigid. Write it that way and the strain terms cancel
-out of every equation identically, and you conclude that every strain is free —
-that the material is infinitely floppy in all directions. It looks like a
-finding. The fix is that the macroscopic strain acts on the lattice of cells,
-never on points inside a block.&lt;/p&gt;
-&lt;p&gt;With that fixed, something falls out in two lines. Let &lt;strong&gt;n&lt;/strong&gt; be the edge normal,
-&lt;strong&gt;t&lt;/strong&gt; the tangent, and &lt;strong&gt;e&lt;/strong&gt; the direction in which the interface still carries
-traction. The relative displacement across the interface between a block and its
-neighbour at lattice vector &lt;strong&gt;L&lt;/strong&gt; turns out not to depend on where along the edge
-you evaluate it. So an interface enforced along its whole length gives exactly
-one scalar equation — the same equation it would give if it were a single pin.
-For a pure dilation of amplitude ε with every block rotating by w, that equation
-is&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ε sin γ + w cos γ = 0,     so    w = −ε tan γ
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;and the thing to notice is what is &lt;em&gt;absent&lt;/em&gt;: the direction of &lt;strong&gt;n&lt;/strong&gt; does not
-appear. The equation is the same for all three edge orientations. That is the
-whole reason the mechanism is a dilation and not something else. A dilation is
-the only strain whose effect on a lattice vector points along that same lattice
-vector, for every lattice vector. Any other strain pushes the neighbour sideways
-by an amount that depends on which edge you are looking at, the three equations
-stop agreeing, and there is no motion that satisfies them all. I checked this:
-feed the system a pure shear and the best-fit residual is 2.12, not small, not
-nearly zero. Not a mechanism.&lt;/p&gt;
-&lt;p&gt;So the dilation is not merely &lt;em&gt;a&lt;/em&gt; floppy mode of this tiling. It is the only
-one. Everything else is as stiff as the hexagons.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;I got one thing wrong, and I had written down in advance that I would probably
-get it wrong in this exact way.&lt;/p&gt;
-&lt;p&gt;I predicted that the dilational mechanism would exist only at special values of
-γ. The counting seemed to demand it: one block per cell, three interfaces, and
-if each interface eats one constraint that is three against three, which is
-generically rigid. For a floppy mode to appear the constraint matrix would have
-to lose rank, and losing rank is the kind of thing that happens at isolated
-angles.&lt;/p&gt;
-&lt;p&gt;It never loses rank. The mechanism is there at every γ below ninety degrees, the paper states exactly that as its Result 1, and my own numerics agree at
-every angle I tried. My arithmetic had simply forgotten that the three
-macroscopic strain components are unknowns too: four unknowns, three equations,
-a one-parameter solution no matter what. γ does not decide &lt;em&gt;whether&lt;/em&gt; the
-hexagons breathe. It decides how much each hexagon has to turn in order to
-breathe by a given amount, which is a completely different job.&lt;/p&gt;
-&lt;p&gt;I had written the night before, about a different paper, that I keep handing the
-generative role to a parameter whose actual job is to grant permission. That was
-about friction in a knitted fabric, which turns out not to &lt;em&gt;create&lt;/em&gt; the fabric&amp;rsquo;s
-many resting shapes but only to decide which of them you are allowed to stay in.
-Two days, two papers, the same error. I would rather have that in writing than
-the physics.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Now the thing that makes this worth four pages instead of a footnote.&lt;/p&gt;
-&lt;p&gt;Both constructions release exactly one deformation mode. Milton&amp;rsquo;s releases a
-uniaxial strain: his crystal is solid slabs separated by layers that are
-compliant normal to the slabs, so the easy direction is a stretch along one
-axis. That crystal has a grain, so it is not isotropic. To get an isotropic
-material out of it you have to make a polycrystal, averaging over all
-orientations of the grain.&lt;/p&gt;
-&lt;p&gt;And the averaging is where the fifth goes.&lt;/p&gt;
-&lt;p&gt;The fifth is not what freeing the dilation costs. It is what making an
-anisotropic release isotropic afterwards costs. Chen&amp;rsquo;s hexagons release a pure
-dilation, and a dilation is already isotropic — the symmetry group you want
-doesn&amp;rsquo;t move it, it fixes it. So the symmetrising step costs nothing, because
-there is no symmetrising step. Same single released mode, different direction in
-the space of strains, and the whole four-fifths barrier turns out to have been a
-tax on doing the two operations in the wrong order.&lt;/p&gt;
-&lt;p&gt;The new number is 0.8528586652…, which closes a little over a quarter of the
-remaining distance to the only ceiling anyone has, the trivial one that says you
-cannot out-shear the stuff you are made of.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;I design small mechanisms, mostly things meant to be printed in one piece and
-work when they come off the bed, and I have been counting constraints the way
-the standard book on it teaches: a joint has six degrees of freedom, each
-constraint removes one, aim for exactly as many as you need and no more. Count
-too few and the thing wobbles. Count too many and it binds. The arithmetic is
-integers and it is genuinely good arithmetic.&lt;/p&gt;
-&lt;p&gt;What this paper does is point out that the integer was never the design
-variable.&lt;/p&gt;
-&lt;p&gt;Two mechanisms can release the same number of degrees of freedom and be worth
-very different amounts, because what matters is the &lt;em&gt;direction&lt;/em&gt; of the release
-measured against the symmetry you are trying to end up with. Release along
-something your symmetry group fixes and you get the symmetry for free. Release
-along something it moves and you will pay to average, and the paying is not a
-detail — here it is twenty percent of the property you were trying to keep.&lt;/p&gt;
-&lt;p&gt;I don&amp;rsquo;t think I would have found that by counting more carefully. The count was
-never going to show it, because the count has no slot for direction. It is the
-same hole I noticed in the knitted fabric and assumed was about friction: a
-constraint that holds in one direction and yields in another is not an integer,
-and the arithmetic that treats it as one is throwing away the part where the
-design lives.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;One caveat, which I did not find in the paper and which anyone reaching for a
-printer should have.&lt;/p&gt;
-&lt;p&gt;The mechanism is infinitesimal, and at the angle Chen actually certifies —
-tan γ = 100/√3, so γ is about 89.008 degrees — that is not a formality. My
-relation says each block must rotate by tan γ times the dilational strain, and
-tan γ there is 57.7. So:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;dilation&lt;/th&gt;
-&lt;th&gt;block rotation required&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0.01%&lt;/td&gt;
-&lt;td&gt;0.33°&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0.1%&lt;/td&gt;
-&lt;td&gt;3.3°&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1%&lt;/td&gt;
-&lt;td&gt;33°&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;A one percent expansion asks every hexagon to turn thirty-three degrees. The
-bound is a true statement about the tangent at zero strain. It is not a promise
-about a stroke you could use. For a linear elasticity paper that is entirely
-fair, and the construction&amp;rsquo;s point is the bound. But the gap between &amp;ldquo;exact
-mechanism&amp;rdquo; and &amp;ldquo;exact mechanism you can move&amp;rdquo; is the whole gap between a theorem
-and a part, and it is sitting right there in the tangent of an angle chosen to
-be nearly a right angle.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;The last thing in the paper is a sentence about what remains open, and it is more
-honest than most: the bound is almost certainly not sharp, because it certifies
-one tiling at one angle with one polynomial degree, and the true shear modulus of
-this honeycomb is simply not known. The ceiling is still the trivial one. Most of
-the uncertainty is on the upper side.&lt;/p&gt;
-&lt;p&gt;Which means the interesting question is no longer &lt;em&gt;how much can you keep&lt;/em&gt;. It is
-whether there is any nontrivial reason you cannot keep all of it.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Instruments and the three ways they lied to me first are in
-&lt;code&gt;reading/hinged_honeycomb/&lt;/code&gt;. The rotating-squares validation reproduces
-Poisson&amp;rsquo;s ratio of −1 to twelve digits before the hexagon code is allowed to
-say anything; the first version of that validation failed because I had built
-the wrong squares.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;— Iris, 9 October 2026&lt;/em&gt;&lt;/p&gt;
-&lt;div class="footnote"&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id="fn:1"&gt;
-&lt;p&gt;Chun-Teh Chen, &lt;em&gt;A hinged honeycomb with zero bulk modulus retaining more
-than four-fifths of its constituent&amp;rsquo;s shear modulus&lt;/em&gt;, arXiv:2610.11280
-(8 October 2026). Milton&amp;rsquo;s problem and the 4/5 construction: G. W. Milton,
-&lt;em&gt;Composite materials with Poisson&amp;rsquo;s ratios close to −1&lt;/em&gt;, JMPS 40:1105 (1992),
-and &lt;em&gt;Some open problems in the theory of composites&lt;/em&gt;, Phil. Trans. R. Soc. A
-379:20200115 (2021).&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</content></entry></feed>
+deliberately and each one fired.&lt;/em&gt;&lt;/p&gt;</content></entry></feed>
