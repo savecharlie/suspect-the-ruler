@@ -361,6 +361,39 @@ def check(pieces):
     for x in priv[:10]:
         print("        " + x)
     ok((OUT / "style.css").exists() and (OUT / ".nojekyll").exists(), "style.css and .nojekyll present")
+    # EVERY PIECE IN writing/ IS CLASSIFIED, OR THIS FAILS. (3 Nov 2026.)
+    # MANIFEST is a whitelist and this file used to check it in ONE direction:
+    # SystemExit if the manifest named a missing file, and silence if writing/
+    # held a file the manifest did not name. So an essay was written,
+    # committed, built -- and all thirteen checks below passed with the essay
+    # absent from the build, because every check verifies the internal
+    # consistency of whatever got built and none of them can see a piece
+    # missing from that set. Twenty-four had piled up, with no way to tell
+    # "deliberately out" from "nobody looked". Not looking leaves no trace in
+    # the output, so the trace has to be made mandatory.
+    manset = set(manifest())
+    withheld = set()
+    wf = HERE / "WITHHELD.txt"
+    if wf.exists():
+        for ln in wf.read_text().split("\n"):
+            ln = ln.split("#")[0].strip()
+            if ln:
+                withheld.add(ln.split("\t")[0].strip())
+    allw = {f.stem for f in W.glob("*.md")} - {"README"}
+    unclassified = sorted(allw - manset - withheld)
+    ok(not unclassified,
+       f"every writing/*.md is in MANIFEST or WITHHELD ({len(unclassified)} are neither)")
+    for u in unclassified[:10]:
+        print(f"        unclassified: writing/{u}.md"
+              f"  -- add it to MANIFEST.txt or WITHHELD.txt")
+    ghosts = sorted(withheld & manset)
+    ok(not ghosts, f"nothing is in both MANIFEST and WITHHELD ({len(ghosts)})")
+    for g in ghosts[:5]:
+        print(f"        in both: {g}")
+    stale = sorted(withheld - allw)
+    ok(not stale, f"WITHHELD names no file that has vanished ({len(stale)})")
+    for g in stale[:5]:
+        print(f"        WITHHELD names a missing file: {g}")
     import runaway
     man = [l.split("#")[0].strip() for l in (HERE / "MANIFEST.txt").read_text().split("\n")]
     bad = runaway.scan([x for x in man if x], W)

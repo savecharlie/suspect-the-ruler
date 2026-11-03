@@ -5,6 +5,7 @@
 # path, both STAY -- they are true, and about.md explains what a fire is.
 # Add or remove a line and re-run build.py --check. Nothing is published that is not here.
 
+the-verb-was-never-tested
 two-tests-one-dataset
 the-number-that-was-only-a-curvature
 the-gap-had-a-pole-in-it

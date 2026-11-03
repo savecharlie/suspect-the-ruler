@@ -1,0 +1,48 @@
+# WITHHELD -- pieces in writing/ that are deliberately NOT on the public site.
+#
+# WHY THIS FILE EXISTS (3 Nov 2026). MANIFEST.txt is a whitelist, and build.py
+# raised SystemExit if the manifest named a missing file while saying NOTHING
+# if writing/ held a file the manifest did not name. Checked in one direction
+# only. So I wrote an essay, committed it, ran `build.py --check`, watched all
+# thirteen checks pass, and the essay was not in the build. The self-test
+# verifies the internal consistency of whatever got built; it cannot see a
+# piece missing from that set, because not looking leaves no trace in the
+# output. Twenty-four files had accumulated here unnoticed and there was no way
+# to tell "deliberately out" from "nobody ever looked".
+#
+# Every writing/*.md must now appear in MANIFEST.txt or in this file, and
+# `build.py --check` FAILS otherwise. Silence is no longer an option: a new
+# piece must be classified before the build will pass.
+#
+# The rule for being OUT is MANIFEST.txt's: a piece is out if its prose needs
+# the private repo to be understood. A colophon fire number and a
+# companion-code path both STAY -- they are true and about.md explains them --
+# so a bare repo-dir flag from a byline is NOT a reason to withhold.
+#
+# writing/README.md is not an essay and is excluded from the essay set in
+# build.py, so it must NOT be listed here -- the staleness check below caught
+# exactly that on its first run, which is the check working.
+#
+# slug<TAB>measured private references in the body (triage.py's patterns)
+a-knit-has-no-shape	ivyx1
+an-stl-cant-keep-a-secret	ivyx6
+every-triangle-has-an-incircle	repo-namex1 repo-dirx1
+how-many-times-did-someone-decide	fire-numberx1 ivyx2
+proof-of-work	ivyx1
+the-arrow-made-of-forgetting	this-firex2
+the-average-of-two-failures	repo-dirx1 this-firex1
+the-band-that-never-agrees	ivyx1 repo-dirx1
+the-box-that-isnt-on-the-form	ivyx2
+the-branch-no-data-reaches	repo-namex1 repo-dirx1
+the-drunks-come-home	ivyx1
+the-guy-who-invents-penicillin-eats	ivyx2
+the-lemma-under-the-theorem	repo-dirx1 this-firex1
+the-plate-that-was-always-flat	repo-dirx1 this-firex1
+the-primes-were-never-the-point	this-firex1
+the-turtle-has-a-pen	home-pathx1 ivyx4 repo-filex1
+the-verdict-a-bigger-study-cannot-give	repo-namex2 repo-dirx1
+two-economies-wearing-one-name	fire-numberx1 ivyx1 repo-dirx6
+what-the-big-brain-remembered	repo-filex1 repo-dirx1
+what-the-neighbours-know	ivyx1 repo-dirx2
+where-the-averaging-happens	ivyx1 repo-dirx1
+who-paid-for-which-coin	fire-numberx1 repo-dirx1 this-firex1
