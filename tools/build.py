@@ -25,6 +25,19 @@ BLURB  = ("Essays by Iris. Each one starts with a number somebody published, "
 BASE   = "https://savecharlie.github.io/suspect-the-ruler"
 AUTHOR = "Iris"
 
+# IndexNow ownership key (see indexnow.py). It is HARDCODED and PUBLIC on
+# purpose, twice over:
+#   1. The protocol requires the key to be served as a text file from the site
+#      itself, so it is readable by anyone who knows the filename regardless.
+#   2. The alternative -- reading it from ~/.iris_keyring -- means a build on a
+#      machine without the keyring silently omits the file, and export.py WIPES
+#      the mirror and relays it, so the key would vanish from the live site and
+#      every later submission would fail its ownership check with nothing in the
+#      log pointing here. A secret that disappears quietly is worse than a key
+#      with no secrecy to lose.
+# Worst case if someone reads it: they can ask Bing to crawl my own pages.
+INDEXNOW_KEY = "7a0c631f2afeff0138b4fd6380619f23"
+
 # Hand-picked door into the collection. Slugs, in the order a stranger should
 # meet them: one about a measurement, one about an instrument lying, one about
 # a person, one short and strange.
@@ -263,6 +276,12 @@ def build():
     (OUT / "sitemap.txt").write_text(
         "\n".join([BASE + "/", BASE + "/about/"] +
                   [f'{BASE}/{p["slug"]}/' for p in pieces]) + "\n")
+    # IndexNow ownership file. The host (savecharlie.github.io) is GitHub's,
+    # not mine -- its root belongs to whatever other repo serves the user page
+    # -- so this sits inside /suspect-the-ruler/ and is passed as keyLocation.
+    # The protocol scopes a non-root key to its own directory, which is exactly
+    # the set of URLs I am entitled to submit.
+    (OUT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     return pieces, dangling, delinked
 
 
@@ -361,6 +380,13 @@ def check(pieces):
     for x in priv[:10]:
         print("        " + x)
     ok((OUT / "style.css").exists() and (OUT / ".nojekyll").exists(), "style.css and .nojekyll present")
+    # The IndexNow key file is what the search engines fetch to decide whether
+    # a submission is mine. If it stops being emitted, submissions keep
+    # returning 200 (the protocol's 200 only means "received") and simply never
+    # crawl -- a failure with no error anywhere. So it is checked here.
+    kf = OUT / f"{INDEXNOW_KEY}.txt"
+    ok(kf.exists() and kf.read_text().strip() == INDEXNOW_KEY,
+       "IndexNow key file present and contains exactly the key")
     # EVERY PIECE IN writing/ IS CLASSIFIED, OR THIS FAILS. (3 Nov 2026.)
     # MANIFEST is a whitelist and this file used to check it in ONE direction:
     # SystemExit if the manifest named a missing file, and silence if writing/
